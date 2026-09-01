@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de consulta sobre Git</title>
+    <link rel="stylesheet" href="formulario.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Consulta sobre Git</h1>
+      <p class="subtitle">Completa el formulario y te responderemos con la mejor ayuda posible.</p>
+
+      <form id="gitForm" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="ejemplo@correo.com" required aria-describedby="emailError" />
+          <div id="emailError" class="error-message" aria-live="polite"></div>
+        </div>
+
+        <div class="field">
+          <label for="tema">Tema</label>
+          <select id="tema" name="tema" required>
+            <option value="">Selecciona un tema</option>
+            <option value="repositorios">Repositorios</option>
+            <option value="ramas">Ramas</option>
+            <option value="commits">Commits</option>
+            <option value="merge-conflictos">Merge / conflictos</option>
+            <option value="pull-request">Pull Request</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Pregunta</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribe tu duda sobre Git..." required></textarea>
+        </div>
+
+        <div class="actions">
+          <button id="submitBtn" type="submit" disabled>Enviar consulta</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="formulario.js"></script>
+  </body>
+</html>
