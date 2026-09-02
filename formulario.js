@@ -40,7 +40,7 @@ function validateEmail() {
 function updateFormState() {
   const emailOk = validateEmail();
   const valid = isFormValid() && emailOk;
-  // submitBtn.disabled = !valid;
+  submitBtn.disabled = !valid;
 }
 
 emailInput.addEventListener('input', updateFormState);
@@ -50,16 +50,11 @@ requiredFields.forEach((field) => {
 });
 
 form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
   if (!isFormValid()) {
+    event.preventDefault();
     validateEmail();
     return;
   }
-
-  alert('Consulta enviada correctamente.');
-  form.reset();
-  // submitBtn.disabled = true;
 });
 
 updateFormState();
