@@ -43,18 +43,24 @@ function updateFormState() {
   submitBtn.disabled = !valid;
 }
 
-emailInput.addEventListener('input', updateFormState);
+if (emailInput) {
+  emailInput.addEventListener('input', updateFormState);
+}
+
 requiredFields.forEach((field) => {
+  if (!field) return;
   field.addEventListener('input', updateFormState);
   field.addEventListener('change', updateFormState);
 });
 
-form.addEventListener('submit', (event) => {
-  if (!isFormValid()) {
-    event.preventDefault();
-    validateEmail();
-    return;
-  }
-});
+if (form) {
+  form.addEventListener('submit', (event) => {
+    if (!isFormValid()) {
+      event.preventDefault();
+      validateEmail();
+      return;
+    }
+  });
+}
 
 updateFormState();
