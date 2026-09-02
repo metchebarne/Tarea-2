@@ -40,7 +40,7 @@ function validateEmail() {
 function updateFormState() {
   const emailOk = validateEmail();
   const valid = isFormValid() && emailOk;
-  submitBtn.disabled = !valid;
+  // submitBtn.disabled = !valid;
 }
 
 emailInput.addEventListener('input', updateFormState);
@@ -59,7 +59,7 @@ form.addEventListener('submit', (event) => {
 
   alert('Consulta enviada correctamente.');
   form.reset();
-  submitBtn.disabled = true;
+  // submitBtn.disabled = true;
 });
 
 updateFormState();
